@@ -131,3 +131,4 @@ dmypy.json
 # Ignore .pt files
 *.pt
 data
+*.pth
