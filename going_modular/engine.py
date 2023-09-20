@@ -1,11 +1,8 @@
 
-from typing import Dict, List, Tuple
-
 import torch
 
 from tqdm.auto import tqdm
-
-from typing import Tuple
+from typing import Dict, List, Tuple
 
 def train_step(model: torch.nn.Module, 
                dataloader: torch.utils.data.DataLoader, 
@@ -116,10 +113,6 @@ def test_step(model: torch.nn.Module,
   test_loss = test_loss / len(dataloader)
   test_acc = test_acc / len(dataloader)
   return test_loss, test_acc
-
-from typing import Dict, List
-
-from tqdm import tqdm
 
 def train(model: torch.nn.Module, 
           train_dataloader: torch.utils.data.DataLoader, 
