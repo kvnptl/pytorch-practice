@@ -70,3 +70,40 @@ def create_dataloaders(
                                      pin_memory=True)
 
         return train_dataloader, test_dataloader, class_names
+
+# test dataloader
+def main():
+
+    import torchvision
+    import os
+
+    weights = torchvision.models.EfficientNet_B0_Weights.DEFAULT # defaults to imagenet IMAGENET1K_V1
+    auto_transform = weights.transforms() # returns a transform.Compose object
+
+    from pathlib import Path
+
+    # Setup path to data folder
+    data_path = Path("/home/kpatel2s/kpatel2s/pytorch-practice/data/")
+    image_path = data_path / "pizza_steak_sushi"
+
+    # Setup train and testing paths
+    train_dir = image_path / "train"
+    test_dir = image_path / "test"
+
+    train_dir, test_dir
+
+    NUM_WORKERS = os.cpu_count()
+    BATCH_SIZE = 32
+
+    train_dataloader, test_dataloader, class_names = create_dataloaders(train_dir=train_dir,
+                                                                        test_dir=test_dir,
+                                                                        transform=auto_transform,
+                                                                        batch_size=BATCH_SIZE,
+                                                                        num_workers=NUM_WORKERS)
+
+    print(f"train_dataloader: {train_dataloader}")
+    print(f"test_dataloader: {test_dataloader}")
+    print(f"class_names: {class_names}")
+        
+if __name__ == "__main__":
+    main()
