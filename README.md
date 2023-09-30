@@ -5,4 +5,5 @@
 ### Resources:
 
 1. [Learn PyTorch for deep learning in a day. Literally.](https://www.youtube.com/watch?v=Z_ikDlimN6A&t=83869s) `Youtube series`
+2. [PyTorch for Deep Learning in 2023: Zero to Mastery](https://www.udemy.com/course/pytorch-for-deep-learning/) `Udemy course`
 
